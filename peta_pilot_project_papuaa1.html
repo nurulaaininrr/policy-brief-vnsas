@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_8b7e32ccf703bb1b637083f948f2db0c {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+<div style="
+    position: fixed; 
+    bottom: 50px; left: 50px; width: 180px; height: 130px; 
+    background-color: white; z-index:9999; font-size:14px;
+    border:2px solid grey; border-radius: 5px; padding: 10px;">
+    <b>Legenda Risiko Papua</b><br>
+    <i style="background:red; width:12px; height:12px; float:left; margin-right:5px; margin-top:3px;"></i> Risiko Tinggi (>100)<br>
+    <i style="background:orange; width:12px; height:12px; float:left; margin-right:5px; margin-top:3px;"></i> Risiko Sedang (50-100)<br>
+    <i style="background:yellow; width:12px; height:12px; float:left; margin-right:5px; margin-top:3px;"></i> Risiko Rendah (<50)<br>
+</div>
+    
+            <div class="folium-map" id="map_8b7e32ccf703bb1b637083f948f2db0c" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_8b7e32ccf703bb1b637083f948f2db0c = L.map(
+                "map_8b7e32ccf703bb1b637083f948f2db0c",
+                {
+                    center: [-3.5, 137.5],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 7,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_38ac2a26ac4c3d43d75f53230d4e3faf = L.tileLayer(
+                "https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "Tiles \u0026copy; Esri \u0026mdash; Source: Esri, DeLorme, NAVTEQ, USGS, Intermap, iPC, NRCAN, Esri Japan, METI, Esri China (Hong Kong), Esri (Thailand), TomTom, 2012",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_38ac2a26ac4c3d43d75f53230d4e3faf.addTo(map_8b7e32ccf703bb1b637083f948f2db0c);
+        
+    
+            var feature_group_20c0e6384028f40eab9c2d5cb22d9228 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var circle_4ef731ce9ae3c357976ab3eb3e7934f6 = L.circle(
+                [-4.5448, 136.8879],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 21000.0, "stroke": true, "weight": 3}
+            ).addTo(feature_group_20c0e6384028f40eab9c2d5cb22d9228);
+        
+    
+        var popup_db901e2789f8d41d34aeed9a49d74741 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_f0e6fa0f2a4eac9c3636a18accc77570 = $(`<div id="html_f0e6fa0f2a4eac9c3636a18accc77570" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 12px; width: 200px;">         <h4 style="margin-bottom: 5px; color: #d9534f;"><b>Mimika</b></h4>         <b>Tingkat Risiko:</b> Tinggi<br>         <b>Total Kasus (ViCIS):</b> 140 Kasus<br>         <b>Isu Dominan:</b> Sumber Daya & Klan<br>     </div>     </div>`)[0];
+                popup_db901e2789f8d41d34aeed9a49d74741.setContent(html_f0e6fa0f2a4eac9c3636a18accc77570);
+            
+        
+
+        circle_4ef731ce9ae3c357976ab3eb3e7934f6.bindPopup(popup_db901e2789f8d41d34aeed9a49d74741)
+        ;
+
+        
+    
+    
+            var circle_85b3c23b91c3c521c503eb4f0782f1b8 = L.circle(
+                [-2.5337, 140.7107],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 14250.0, "stroke": true, "weight": 3}
+            ).addTo(feature_group_20c0e6384028f40eab9c2d5cb22d9228);
+        
+    
+        var popup_71965f1ae7015abbceca8b7dcefe4321 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_26b686ee6f98daef34f7249840ce4ffc = $(`<div id="html_26b686ee6f98daef34f7249840ce4ffc" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 12px; width: 200px;">         <h4 style="margin-bottom: 5px; color: #d9534f;"><b>Kota Jayapura</b></h4>         <b>Tingkat Risiko:</b> Tinggi<br>         <b>Total Kasus (ViCIS):</b> 95 Kasus<br>         <b>Isu Dominan:</b> Popular Justice & Kriminal<br>     </div>     </div>`)[0];
+                popup_71965f1ae7015abbceca8b7dcefe4321.setContent(html_26b686ee6f98daef34f7249840ce4ffc);
+            
+        
+
+        circle_85b3c23b91c3c521c503eb4f0782f1b8.bindPopup(popup_71965f1ae7015abbceca8b7dcefe4321)
+        ;
+
+        
+    
+    
+            var circle_9908cbdb418db4a7b8da5ad11bb9755a = L.circle(
+                [-2.9331, 139.9329],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 16500.0, "stroke": true, "weight": 3}
+            ).addTo(feature_group_20c0e6384028f40eab9c2d5cb22d9228);
+        
+    
+        var popup_d015167f6a0812922ca46bf7443fec99 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_42b9c32b695d5a7b81cca6babbcecedf = $(`<div id="html_42b9c32b695d5a7b81cca6babbcecedf" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 12px; width: 200px;">         <h4 style="margin-bottom: 5px; color: #d9534f;"><b>Jayapura</b></h4>         <b>Tingkat Risiko:</b> Tinggi<br>         <b>Total Kasus (ViCIS):</b> 110 Kasus<br>         <b>Isu Dominan:</b> Lainnya / Sengketa Lahan<br>     </div>     </div>`)[0];
+                popup_d015167f6a0812922ca46bf7443fec99.setContent(html_42b9c32b695d5a7b81cca6babbcecedf);
+            
+        
+
+        circle_9908cbdb418db4a7b8da5ad11bb9755a.bindPopup(popup_d015167f6a0812922ca46bf7443fec99)
+        ;
+
+        
+    
+    
+            var circle_4460dd31ed73b03cd6711d86e14ec12d = L.circle(
+                [-3.5356, 137.7731],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12000.0, "stroke": true, "weight": 3}
+            ).addTo(feature_group_20c0e6384028f40eab9c2d5cb22d9228);
+        
+    
+        var popup_158932c37013a26868289dfe2de1c4af = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_bcd17117de52a023dad9cf65d8573ba9 = $(`<div id="html_bcd17117de52a023dad9cf65d8573ba9" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 12px; width: 200px;">         <h4 style="margin-bottom: 5px; color: #d9534f;"><b>Puncak Jaya</b></h4>         <b>Tingkat Risiko:</b> Sedang<br>         <b>Total Kasus (ViCIS):</b> 80 Kasus<br>         <b>Isu Dominan:</b> Politik / Vertikal (OPM)<br>     </div>     </div>`)[0];
+                popup_158932c37013a26868289dfe2de1c4af.setContent(html_bcd17117de52a023dad9cf65d8573ba9);
+            
+        
+
+        circle_4460dd31ed73b03cd6711d86e14ec12d.bindPopup(popup_158932c37013a26868289dfe2de1c4af)
+        ;
+
+        
+    
+    
+            var circle_0781a715d74b1381958a911fa583d214 = L.circle(
+                [-3.3421, 138.6811],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10000, "stroke": true, "weight": 3}
+            ).addTo(feature_group_20c0e6384028f40eab9c2d5cb22d9228);
+        
+    
+        var popup_00481656e91a7cdbef239fc19f5efdc8 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_6ab11dc227ad89e72f597928bb207065 = $(`<div id="html_6ab11dc227ad89e72f597928bb207065" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 12px; width: 200px;">         <h4 style="margin-bottom: 5px; color: #d9534f;"><b>Tolikara</b></h4>         <b>Tingkat Risiko:</b> Sedang<br>         <b>Total Kasus (ViCIS):</b> 65 Kasus<br>         <b>Isu Dominan:</b> Konflik Klan & Pemilu<br>     </div>     </div>`)[0];
+                popup_00481656e91a7cdbef239fc19f5efdc8.setContent(html_6ab11dc227ad89e72f597928bb207065);
+            
+        
+
+        circle_0781a715d74b1381958a911fa583d214.bindPopup(popup_00481656e91a7cdbef239fc19f5efdc8)
+        ;
+
+        
+    
+    
+            var circle_018008aa073f58b41298f040ab242668 = L.circle(
+                [-4.3315, 139.6366],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10000, "stroke": true, "weight": 3}
+            ).addTo(feature_group_20c0e6384028f40eab9c2d5cb22d9228);
+        
+    
+        var popup_4a72ace40b74b82aec8bf7844bf6b996 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_4ff1926e115796463962393c462de6e2 = $(`<div id="html_4ff1926e115796463962393c462de6e2" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 12px; width: 200px;">         <h4 style="margin-bottom: 5px; color: #d9534f;"><b>Yahukimo</b></h4>         <b>Tingkat Risiko:</b> Rendah<br>         <b>Total Kasus (ViCIS):</b> 35 Kasus<br>         <b>Isu Dominan:</b> Konflik Klan<br>     </div>     </div>`)[0];
+                popup_4a72ace40b74b82aec8bf7844bf6b996.setContent(html_4ff1926e115796463962393c462de6e2);
+            
+        
+
+        circle_018008aa073f58b41298f040ab242668.bindPopup(popup_4a72ace40b74b82aec8bf7844bf6b996)
+        ;
+
+        
+    
+    
+            var circle_f2bcdf21d00a614ea8585e173841e8f3 = L.circle(
+                [-8.4991, 140.402],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10000, "stroke": true, "weight": 3}
+            ).addTo(feature_group_20c0e6384028f40eab9c2d5cb22d9228);
+        
+    
+        var popup_13133816456afa1bf069612ac40d4842 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_33e3eb6f864d5207423c6fd17730cbae = $(`<div id="html_33e3eb6f864d5207423c6fd17730cbae" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 12px; width: 200px;">         <h4 style="margin-bottom: 5px; color: #d9534f;"><b>Merauke</b></h4>         <b>Tingkat Risiko:</b> Rendah<br>         <b>Total Kasus (ViCIS):</b> 50 Kasus<br>         <b>Isu Dominan:</b> Konflik Agraria / MIFEE<br>     </div>     </div>`)[0];
+                popup_13133816456afa1bf069612ac40d4842.setContent(html_33e3eb6f864d5207423c6fd17730cbae);
+            
+        
+
+        circle_f2bcdf21d00a614ea8585e173841e8f3.bindPopup(popup_13133816456afa1bf069612ac40d4842)
+        ;
+
+        
+    
+    
+            feature_group_20c0e6384028f40eab9c2d5cb22d9228.addTo(map_8b7e32ccf703bb1b637083f948f2db0c);
+        
+    
+            var macro_element_dd2b1a5cbfeeec6e26fb3df4eef4ad71 = L.tileLayer.wms(
+                "https://nowcoast.noaa.gov/arcgis/services/nowcoast/forecast_meteo_ocean_imagery_winds_grib_mag_dir/MapServer/WMSServer",
+                {"attribution": "", "format": "image/jpeg", "layers": "1", "opacity": 0.5, "styles": "", "transparent": true, "version": "1.1.1"}
+            );
+        
+    
+            var layer_control_ca5dafea581c0e48b916d7cf62de092c_layers = {
+                base_layers : {
+                    "esriworldstreetmap" : tile_layer_38ac2a26ac4c3d43d75f53230d4e3faf,
+                },
+                overlays :  {
+                    "Hotspot Konflik \u0026 Risiko (VNSAS)" : feature_group_20c0e6384028f40eab9c2d5cb22d9228,
+                    "Arah \u0026 Vektor Angin (Klimatologi)" : macro_element_dd2b1a5cbfeeec6e26fb3df4eef4ad71,
+                },
+            };
+            let layer_control_ca5dafea581c0e48b916d7cf62de092c = L.control.layers(
+                layer_control_ca5dafea581c0e48b916d7cf62de092c_layers.base_layers,
+                layer_control_ca5dafea581c0e48b916d7cf62de092c_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": false,
+  "autoZIndex": true,
+}
+            ).addTo(map_8b7e32ccf703bb1b637083f948f2db0c);
+
+        
+</script>
+</html>
