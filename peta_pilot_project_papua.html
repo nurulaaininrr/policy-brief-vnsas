@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_a87ae572ee176f95866670d701655c7e {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+<div style="
+    position: fixed; 
+    bottom: 50px; left: 50px; width: 180px; height: 130px; 
+    background-color: white; z-index:9999; font-size:14px;
+    border:2px solid grey; border-radius: 5px; padding: 10px;">
+    <b>Legenda Risiko Papua</b><br>
+    <i style="background:red; width:12px; height:12px; float:left; margin-right:5px; margin-top:3px;"></i> Risiko Tinggi (>100)<br>
+    <i style="background:orange; width:12px; height:12px; float:left; margin-right:5px; margin-top:3px;"></i> Risiko Sedang (50-100)<br>
+    <i style="background:yellow; width:12px; height:12px; float:left; margin-right:5px; margin-top:3px;"></i> Risiko Rendah (<50)<br>
+</div>
+    
+            <div class="folium-map" id="map_a87ae572ee176f95866670d701655c7e" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_a87ae572ee176f95866670d701655c7e = L.map(
+                "map_a87ae572ee176f95866670d701655c7e",
+                {
+                    center: [-3.5, 137.5],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 7,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_e2e8d61279283a677eca6b1ebcfaa97f = L.tileLayer(
+                "https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "Tiles \u0026copy; Esri \u0026mdash; Source: Esri, DeLorme, NAVTEQ, USGS, Intermap, iPC, NRCAN, Esri Japan, METI, Esri China (Hong Kong), Esri (Thailand), TomTom, 2012",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_e2e8d61279283a677eca6b1ebcfaa97f.addTo(map_a87ae572ee176f95866670d701655c7e);
+        
+    
+            var circle_6882ab13dc788a4a1b18a27136ebc8d8 = L.circle(
+                [-4.5448, 136.8879],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 21000.0, "stroke": true, "weight": 3}
+            ).addTo(map_a87ae572ee176f95866670d701655c7e);
+        
+    
+        var popup_b056b83a7025d37657eaaa3d35663f30 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_991c39e1dfeb8450db0ca203d5a86d6e = $(`<div id="html_991c39e1dfeb8450db0ca203d5a86d6e" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 12px; width: 200px;">         <h4 style="margin-bottom: 5px; color: #d9534f;"><b>Mimika</b></h4>         <b>Tingkat Risiko:</b> Tinggi<br>         <b>Total Kasus (ViCIS):</b> 140 Kasus<br>         <b>Isu Dominan:</b> Sumber Daya & Klan<br>     </div>     </div>`)[0];
+                popup_b056b83a7025d37657eaaa3d35663f30.setContent(html_991c39e1dfeb8450db0ca203d5a86d6e);
+            
+        
+
+        circle_6882ab13dc788a4a1b18a27136ebc8d8.bindPopup(popup_b056b83a7025d37657eaaa3d35663f30)
+        ;
+
+        
+    
+    
+            var circle_4eb016b05886753dd9cc5cb4d4db1b5e = L.circle(
+                [-2.5337, 140.7107],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 14250.0, "stroke": true, "weight": 3}
+            ).addTo(map_a87ae572ee176f95866670d701655c7e);
+        
+    
+        var popup_216db6687624f1a29692caecd9950625 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_0130e10171c293f2f7696678388097ca = $(`<div id="html_0130e10171c293f2f7696678388097ca" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 12px; width: 200px;">         <h4 style="margin-bottom: 5px; color: #d9534f;"><b>Kota Jayapura</b></h4>         <b>Tingkat Risiko:</b> Tinggi<br>         <b>Total Kasus (ViCIS):</b> 95 Kasus<br>         <b>Isu Dominan:</b> Popular Justice & Kriminal<br>     </div>     </div>`)[0];
+                popup_216db6687624f1a29692caecd9950625.setContent(html_0130e10171c293f2f7696678388097ca);
+            
+        
+
+        circle_4eb016b05886753dd9cc5cb4d4db1b5e.bindPopup(popup_216db6687624f1a29692caecd9950625)
+        ;
+
+        
+    
+    
+            var circle_3fff0dcf3473049ef8a4329bde9cddb1 = L.circle(
+                [-2.9331, 139.9329],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 16500.0, "stroke": true, "weight": 3}
+            ).addTo(map_a87ae572ee176f95866670d701655c7e);
+        
+    
+        var popup_ad1e5e4b025b7b0da71bb6e8302617fd = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_0d4e8435e0337174f1282d751ba3e2f7 = $(`<div id="html_0d4e8435e0337174f1282d751ba3e2f7" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 12px; width: 200px;">         <h4 style="margin-bottom: 5px; color: #d9534f;"><b>Jayapura</b></h4>         <b>Tingkat Risiko:</b> Tinggi<br>         <b>Total Kasus (ViCIS):</b> 110 Kasus<br>         <b>Isu Dominan:</b> Lainnya / Sengketa Lahan<br>     </div>     </div>`)[0];
+                popup_ad1e5e4b025b7b0da71bb6e8302617fd.setContent(html_0d4e8435e0337174f1282d751ba3e2f7);
+            
+        
+
+        circle_3fff0dcf3473049ef8a4329bde9cddb1.bindPopup(popup_ad1e5e4b025b7b0da71bb6e8302617fd)
+        ;
+
+        
+    
+    
+            var circle_6bdd5e90093bd202630b89884d62cbd9 = L.circle(
+                [-3.5356, 137.7731],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12000.0, "stroke": true, "weight": 3}
+            ).addTo(map_a87ae572ee176f95866670d701655c7e);
+        
+    
+        var popup_f6793b72f30d237825b7b92e01d5d5d8 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_098c91d247f8edffe8c814943699a041 = $(`<div id="html_098c91d247f8edffe8c814943699a041" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 12px; width: 200px;">         <h4 style="margin-bottom: 5px; color: #d9534f;"><b>Puncak Jaya</b></h4>         <b>Tingkat Risiko:</b> Sedang<br>         <b>Total Kasus (ViCIS):</b> 80 Kasus<br>         <b>Isu Dominan:</b> Politik / Vertikal (OPM)<br>     </div>     </div>`)[0];
+                popup_f6793b72f30d237825b7b92e01d5d5d8.setContent(html_098c91d247f8edffe8c814943699a041);
+            
+        
+
+        circle_6bdd5e90093bd202630b89884d62cbd9.bindPopup(popup_f6793b72f30d237825b7b92e01d5d5d8)
+        ;
+
+        
+    
+    
+            var circle_c4e30ac3059fb49b068d6f1b8c0d42e1 = L.circle(
+                [-3.3421, 138.6811],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10000, "stroke": true, "weight": 3}
+            ).addTo(map_a87ae572ee176f95866670d701655c7e);
+        
+    
+        var popup_80472f66b66f6ee55e154dff3319d9fc = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_d2fe9918cf0496537e94285a6ceab38e = $(`<div id="html_d2fe9918cf0496537e94285a6ceab38e" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 12px; width: 200px;">         <h4 style="margin-bottom: 5px; color: #d9534f;"><b>Tolikara</b></h4>         <b>Tingkat Risiko:</b> Sedang<br>         <b>Total Kasus (ViCIS):</b> 65 Kasus<br>         <b>Isu Dominan:</b> Konflik Klan & Pemilu<br>     </div>     </div>`)[0];
+                popup_80472f66b66f6ee55e154dff3319d9fc.setContent(html_d2fe9918cf0496537e94285a6ceab38e);
+            
+        
+
+        circle_c4e30ac3059fb49b068d6f1b8c0d42e1.bindPopup(popup_80472f66b66f6ee55e154dff3319d9fc)
+        ;
+
+        
+    
+    
+            var circle_e5a8fe2712c7cf68be5fbd238676cca2 = L.circle(
+                [-4.3315, 139.6366],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10000, "stroke": true, "weight": 3}
+            ).addTo(map_a87ae572ee176f95866670d701655c7e);
+        
+    
+        var popup_479b7ae9c8a1d9abcd0689f5203bc291 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_bf8e35d25c107ada1d983977053f509f = $(`<div id="html_bf8e35d25c107ada1d983977053f509f" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 12px; width: 200px;">         <h4 style="margin-bottom: 5px; color: #d9534f;"><b>Yahukimo</b></h4>         <b>Tingkat Risiko:</b> Rendah<br>         <b>Total Kasus (ViCIS):</b> 35 Kasus<br>         <b>Isu Dominan:</b> Konflik Klan<br>     </div>     </div>`)[0];
+                popup_479b7ae9c8a1d9abcd0689f5203bc291.setContent(html_bf8e35d25c107ada1d983977053f509f);
+            
+        
+
+        circle_e5a8fe2712c7cf68be5fbd238676cca2.bindPopup(popup_479b7ae9c8a1d9abcd0689f5203bc291)
+        ;
+
+        
+    
+    
+            var circle_51f2c380970f5c0de3dd49abe2d23fd8 = L.circle(
+                [-8.4991, 140.402],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10000, "stroke": true, "weight": 3}
+            ).addTo(map_a87ae572ee176f95866670d701655c7e);
+        
+    
+        var popup_b9906e77450f1f726b45774ca421d395 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_2a5e2e2f8a68575661bbd46ccf9eb0de = $(`<div id="html_2a5e2e2f8a68575661bbd46ccf9eb0de" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 12px; width: 200px;">         <h4 style="margin-bottom: 5px; color: #d9534f;"><b>Merauke</b></h4>         <b>Tingkat Risiko:</b> Rendah<br>         <b>Total Kasus (ViCIS):</b> 50 Kasus<br>         <b>Isu Dominan:</b> Konflik Agraria / MIFEE<br>     </div>     </div>`)[0];
+                popup_b9906e77450f1f726b45774ca421d395.setContent(html_2a5e2e2f8a68575661bbd46ccf9eb0de);
+            
+        
+
+        circle_51f2c380970f5c0de3dd49abe2d23fd8.bindPopup(popup_b9906e77450f1f726b45774ca421d395)
+        ;
+
+        
+    
+</script>
+</html>
